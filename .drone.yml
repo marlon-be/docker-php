@@ -1,0 +1,7 @@
+image: stackbrew/ubuntu:precise
+script:
+  - docker build .
+notify:
+  email:
+    recipients:
+      - contact@dieterprovoost.be
