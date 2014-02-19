@@ -16,7 +16,7 @@ RUN mkdir /var/run/sshd
 RUN echo "root:root" | chpasswd
 
 # PHP + extensions
-RUN apt-get -y -f install php5-cli php5-dev php5-mysql php5-xmlrpc php5-curl curl libicu-dev php5-sqlite php5-memcache php-pear php5-xsl php5-mcrypt php5-gd
+RUN apt-get -y -f install php5-cli php5-dev php5-mysql php5-xmlrpc php5-curl curl libicu-dev php5-sqlite php5-memcache php-pear php5-xsl php5-mcrypt php5-gd php5-intl
 
 # Setup SSH
 RUN echo " IdentityFile /root/.ssh/id_rsa" >> /etc/ssh/ssh_config
