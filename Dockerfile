@@ -1,22 +1,24 @@
 FROM ubuntu:latest
 MAINTAINER Dieter Provoost <dieter.provoost@marlon.be>
 
-RUN apt-get update
+ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get -y -f install python-software-properties
+RUN apt-get update -y
+
+RUN apt-get -y -f install software-properties-common python-software-properties
 RUN add-apt-repository ppa:ondrej/php5
 
 RUN echo 'deb http://us.archive.ubuntu.com/ubuntu/ precise main universe' >> /etc/apt/sources.list.d/universe.sources.list
 RUN echo 'deb-src http://us.archive.ubuntu.com/ubuntu/ precise main universe' >> /etc/apt/sources.list.d/universe-src.sources.list
 
-RUN apt-get update
+RUN apt-get update -y
 
-RUN apt-get install -y openssh-server
+RUN apt-get install -y -f --force-yes openssh-server
 RUN mkdir /var/run/sshd
 RUN echo "root:root" | chpasswd
 
 # PHP + extensions
-RUN apt-get -y -f install php5-cli php5-dev php5-mysql php5-xmlrpc php5-curl curl libicu-dev php5-sqlite php5-memcache php-pear php5-xsl php5-mcrypt php5-gd php5-intl
+RUN apt-get -y -f --force-yes install php5-cli php5-dev php5-mysql php5-xmlrpc php5-curl curl libicu-dev php5-sqlite php5-memcache php-pear php5-xsl php5-mcrypt php5-gd php5-intl
 
 # Setup SSH
 RUN echo " IdentityFile /root/.ssh/id_rsa" >> /etc/ssh/ssh_config
