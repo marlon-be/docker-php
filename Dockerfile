@@ -18,7 +18,7 @@ RUN mkdir /var/run/sshd
 RUN echo "root:root" | chpasswd
 
 RUN locale-gen nl_BE.UTF-8
-RUN update-locale LC_ALL=nl_BE.UTF-8
+ENV LC_ALL nl_BE.UTF-8
 
 # PHP + extensions
 RUN apt-get -y -f --force-yes install php5-cli php5-dev php5-mysql php5-xmlrpc php5-curl curl libicu-dev php5-sqlite php5-memcache php-pear php5-xsl php5-mcrypt php5-gd php5-intl
