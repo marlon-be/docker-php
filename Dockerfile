@@ -7,14 +7,6 @@ RUN apt-get -y -f install software-properties-common && \
     add-apt-repository ppa:ondrej/php5 && \
     apt-get update -y
 
-#RUN apt-get update -y && \
-#    apt-get -y -f install git-core software-properties-common python-software-properties && \
-#    add-apt-repository ppa:ondrej/php5
-
-#RUN echo 'deb http://us.archive.ubuntu.com/ubuntu/ trusty main universe' >> /etc/apt/sources.list.d/universe.sources.list && \
-#    echo 'deb-src http://us.archive.ubuntu.com/ubuntu/ trusty main universe' >> /etc/apt/sources.list.d/universe-src.sources.list && \
-#    apt-get update -y
-
 RUN locale-gen nl_BE.UTF-8
 ENV LC_ALL nl_BE.UTF-8
 
