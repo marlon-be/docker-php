@@ -12,7 +12,7 @@ RUN locale-gen nl_BE.UTF-8
 ENV LC_ALL nl_BE.UTF-8
 
 # PHP + extensions
-RUN apt-get -y -f --force-yes install php7.0-cli php7.0-dev php7.0-mysql php7.0-xmlrpc php7.0-curl curl libicu-dev php7.0-sqlite php-memcached php-pear php7.0-xsl php7.0-mcrypt php7.0-gd php7.0-intl php7.0-mbstring php7.0-bcmath php7.0-zip
+RUN apt-get -y -f --force-yes install php7.0-cli php7.0-dev php7.0-mysql php7.0-xmlrpc php7.0-curl curl libicu-dev php7.0-sqlite php-memcached php-pear php7.0-xsl php7.0-mcrypt php7.0-gd php7.0-intl php7.0-mbstring php7.0-bcmath php7.0-zip php7.0-soap
 
 #RUN pecl install xdebug && \
 #    pecl install mongo && \
