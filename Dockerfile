@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND noninteractive
 #RUN apt-get -y -f install software-properties-common && \
 #    add-apt-repository ppa:ondrej/php5-5.6 && \
 #    apt-get update -y
-RUN apt-get update -y
+RUN apt-get update -y && apt-get install -y locales
 
 RUN locale-gen nl_BE.UTF-8
 ENV LC_ALL nl_BE.UTF-8
