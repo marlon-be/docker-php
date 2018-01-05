@@ -1,5 +1,5 @@
 FROM ubuntu:xenial
-MAINTAINER Dieter Provoost <dieter.provoost@marlon.be>
+MAINTAINER PHP marlon <php@marlon.be>
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -14,7 +14,7 @@ RUN apt-get -y -f install software-properties-common && \
     apt-get update -y
 
 # PHP + extensions
-RUN apt-get -y -f --force-yes install php7.1-cli php7.1-dev php7.1-mysql php7.1-xmlrpc php7.1-curl curl libicu-dev php7.1-sqlite php-memcached php-pear php7.1-xsl php7.1-mcrypt php7.1-gd php7.1-intl php7.1-mbstring php7.1-bcmath php7.1-zip php7.1-soap
+RUN apt-get -y -f --force-yes install php7.2-cli php7.2-dev php7.2-mysql php7.2-xmlrpc php7.2-curl curl libicu-dev php7.2-sqlite php-memcached php-pear php7.2-xsl php7.2-gd php7.2-intl php7.2-mbstring php7.2-bcmath php7.2-zip php7.2-soap
 
 #RUN pecl install xdebug && \
 #    pecl install mongo && \
