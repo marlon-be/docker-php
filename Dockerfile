@@ -1,5 +1,5 @@
 FROM ubuntu:xenial
-MAINTAINER Dieter Provoost <dieter.provoost@marlon.be>
+MAINTAINER PHP Marlon <php@marlon.be>
 
 ENV DEBIAN_FRONTEND noninteractive
 
