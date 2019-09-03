@@ -1,4 +1,4 @@
-FROM ubuntu:xenial
+FROM ubuntu:bionic
 MAINTAINER PHP marlon <php@marlon.be>
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -14,13 +14,4 @@ RUN apt-get -y -f install software-properties-common && \
     apt-get update -y
 
 # PHP + extensions
-RUN apt-get -y -f --force-yes install php7.2-cli php7.2-dev php7.2-mysql php7.2-pgsql php7.2-xmlrpc php7.2-curl curl libicu-dev php7.2-sqlite php-memcached php-pear php7.2-xsl php7.2-gd php7.2-intl php7.2-mbstring php7.2-bcmath php7.2-zip php7.2-soap
-
-#RUN pecl install xdebug && \
-#    pecl install mongo && \
-#    pecl install xhprof-beta && \
-#    apt-get clean -y
-
-#ADD php/custom.ini /etc/php5/cli/conf.d/40-custom.ini
-#ADD php/mongo.ini /etc/php5/cli/conf.d/50-mongo.ini
-#ADD php/xhprof.ini /etc/php5/cli/conf.d/60-xhprof.ini
+RUN apt-get -y -f --force-yes install php7.3-cli php7.3-dev php7.3-mysql php7.3-pgsql php7.3-xmlrpc php7.3-curl curl libicu-dev php7.3-sqlite php-memcached php-pear php7.3-xsl php7.3-gd php7.3-intl php7.3-mbstring php7.3-bcmath php7.3-zip php7.3-soap
